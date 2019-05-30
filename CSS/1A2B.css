@@ -1,0 +1,13 @@
+footer {
+    margin-top: 50px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #9E9E9E;
+    padding-top: 25px;
+    color: #908f8f;
+}
+
+.jumbotron-fluid {
+    padding-top: 65px;
+    padding-bottom: 35px;
+}
