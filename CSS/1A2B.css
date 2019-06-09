@@ -11,3 +11,27 @@ footer {
     padding-bottom: 35px;
     text-align: center;
 }
+
+.input {
+    margin-left: 0px;
+}
+
+#guess {
+    width: 152px;
+}
+
+.box {
+    width: calc(1.5em + .75rem + 2px);
+    height: calc(1.5em + .75rem + 2px);
+}
+
+.b {
+    width: calc(1.5em + .75rem + 7px);
+    height: calc(1.5em + .75rem + 2px);
+    margin-right: 7px;
+    margin-top: -5px;
+}
+
+#id {
+    cursor: default;
+}
