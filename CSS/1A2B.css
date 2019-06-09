@@ -28,7 +28,7 @@ footer {
 }
 
 .b {
-    width: calc(1.5em + .75rem + 7px);
+    width: calc(1.5em + .75rem);
     height: calc(1.5em + .75rem + 2px);
     margin-right: 7px;
     margin-top: -5px;
