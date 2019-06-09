@@ -47,7 +47,6 @@ $('#guess').on('click', () => {
         $('#' + i).removeAttr("disabled")
         $("#ans" + i).val('')
     }
-
     if (a == 4) {
         $b = $('<button>').attr('id', 'id').attr('type', 'button').attr('class', 'btn btn-outline-primary').text('Correct! You took ' + count + ' guesses.')
         $col = $('<div>').attr('class', 'col').append($b)
@@ -59,9 +58,9 @@ $('#guess').on('click', () => {
 
         $('#clear').attr('disabled', 'disabled')
         $('#delete').attr('disabled', 'disabled')
-        $('#guess').attr('disabled', 'disabled')
     }
 
+    $('#guess').attr('disabled', 'disabled')
     guess = []
     time = 0
 })
@@ -225,8 +224,10 @@ $('#delete').on('click', () => {
             $('#' + guess[i]).attr('disabled', 'disabled')
         }
     }
-    time--
-    $('#' + guess[time]).removeAttr("disabled")
-    $("#ans" + time).val('')
-    guess.splice(time)
+    if (time > 0) {
+        time--
+        $('#' + guess[time]).removeAttr("disabled")
+        $("#ans" + time).val('')
+        guess.splice(time)
+    }
 })
