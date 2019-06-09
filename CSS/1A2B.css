@@ -17,20 +17,19 @@ footer {
 }
 
 #guess {
-    width: 152px;
-    max-width: 100%;
+    width: 140px;
 }
 
 .box {
-    width: calc(1.5em + .75rem + 2px);
-    height: calc(1.5em + .75rem + 2px);
+    width: 35px;
+    height: 35px;
     max-width: 100%;
 }
 
 .b {
-    width: calc(1.5em + .75rem);
-    height: calc(1.5em + .75rem + 2px);
-    margin-right: 7px;
+    width: 40px;
+    height: 40px;
+    margin-right: 5.25px;
     margin-top: -5px;
     max-width: 100%;
 }
