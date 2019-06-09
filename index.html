@@ -20,15 +20,61 @@
             </div>
         </div>
 
-        <button id="start" type="button" class="btn btn-primary">Start</button>
+        <div class="row">
 
-        <div id="history"></div>
-
-
-        <div class="form-group row" id="input">
+            <!-- left input -->
             <div class="col">
-                <input id="ans" type="text">
-                <button id="guess" type="button" class="btn btn-primary">Guess!</button>
+
+                <button id="start" type="button" class="btn btn-primary">Start</button>
+
+
+
+                <div id="input">
+                    <div class="form-group row">
+                        <div class="col">
+                            <button id="1" type="button" class="btn btn-primary b">1</button>
+                            <button id="2" type="button" class="btn btn-primary b">2</button>
+                            <button id="3" type="button" class="btn btn-primary b">3</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <button id="4" type="button" class="btn btn-primary b">4</button>
+                            <button id="5" type="button" class="btn btn-primary b">5</button>
+                            <button id="6" type="button" class="btn btn-primary b">6</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <button id="7" type="button" class="btn btn-primary b">7</button>
+                            <button id="8" type="button" class="btn btn-primary b">8</button>
+                            <button id="9" type="button" class="btn btn-primary b">9</button>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <button id="clear" type="button" class="btn btn-primary b">C</button>
+                            <button id="0" type="button" class="btn btn-primary b">0</button>
+                            <button id="delete" type="button" class="btn btn-primary b">⌫</button>
+                        </div>
+                    </div>
+                    <div class="form-group row input">
+                        <input id="ans0" type="text" class="form-control box" disabled>
+                        <input id="ans1" type="text" class="form-control box" disabled>
+                        <input id="ans2" type="text" class="form-control box" disabled>
+                        <input id="ans3" type="text" class="form-control box" disabled>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col">
+                            <button id="guess" type="button" class="btn btn-primary" disabled>Guess!</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right input -->
+            <div class="col">
+                <div id="history"></div>
             </div>
         </div>
 
