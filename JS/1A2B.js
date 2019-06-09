@@ -5,25 +5,25 @@ var a, b, count = 0,
 var ans = [],
     guess = []
 $('#start').on('click', () => {
+    $("#lead").empty()
+    $("#lead").append('Please enter your guess.')
+    $("#start").hide()
 
-        $("#lead").empty()
-        $("#lead").append('Please enter your guess.')
-        $("#start").hide()
+    var pick = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    for (var i = 0; i < 4; i++) {
+        rand = Math.floor(Math.random() * (10 - i))
+        ans.push(pick[rand])
+        pick[rand] = pick[9 - i]
+    }
 
-        var pick = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        for (var i = 0; i < 4; i++) {
-            rand = Math.floor(Math.random() * (10 - i))
-            ans.push(pick[rand])
-            pick[rand] = pick[9 - i]
-        }
+    console.log(ans)
+    $('#history').show()
+    $('#input').show()
+})
 
-        $('#history').show()
-        $('#input').show()
-    })
-    // Submit Guess
+// Submit Guess
 $('#guess').on('click', () => {
     console.log(guess)
-    console.log(ans)
     count++
     a = 0
     b = 0
@@ -42,24 +42,26 @@ $('#guess').on('click', () => {
     $col = $('<div>').attr('class', 'col').append($b)
     $row = $('<div>').attr('class', 'form-group row').append($col)
     $("#history").append($row)
+
+    for (var i = 0; i <= 9; i++) {
+        $('#' + i).removeAttr("disabled")
+        $("#ans" + i).val('')
+    }
+
     if (a == 4) {
         $b = $('<button>').attr('id', 'id').attr('type', 'button').attr('class', 'btn btn-outline-primary').text('Correct! You took ' + count + ' guesses.')
         $col = $('<div>').attr('class', 'col').append($b)
         $row = $('<div>').attr('class', 'form-group row').append($col)
         $("#history").append($row)
 
-        /*  end game stop enter
-        for (var i = 0; i <= 9; i++) { $('#' + i).attr('disabled', 'disabled') }
+        for (var i = 0; i <= 9; i++)
+            $('#' + i).attr('disabled', 'disabled')
+
         $('#clear').attr('disabled', 'disabled')
         $('#delete').attr('disabled', 'disabled')
-        */
+        $('#guess').attr('disabled', 'disabled')
     }
 
-
-    for (var i = 0; i < 4; i++) {
-        $('#' + guess[i]).removeAttr("disabled")
-        $("#ans" + i).val('')
-    }
     guess = []
     time = 0
 })
