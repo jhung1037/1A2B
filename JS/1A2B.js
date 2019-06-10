@@ -1,13 +1,20 @@
 $('#history').hide()
 $('#input').hide()
-var a, b, count = 0,
-    time = 0
-var ans = [],
-    guess = []
+var a, b, count, time
+var ans, guess
 $('#start').on('click', () => {
+    count = 0
+    time = 0
+    ans = []
+    guess = []
+    for (var i = 0; i <= 9; i++)
+        $('#' + i).removeAttr("disabled")
+    $('#clear').removeAttr("disabled")
+    $('#delete').removeAttr("disabled")
     $("#lead").empty()
     $("#lead").append('Please enter your guess.')
     $("#start").hide()
+    $("#history").empty()
 
     var pick = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     for (var i = 0; i < 4; i++) {
@@ -47,6 +54,8 @@ $('#guess').on('click', () => {
         $('#' + i).removeAttr("disabled")
         $("#ans" + i).val('')
     }
+
+    $('#guess').attr('disabled', 'disabled')
     if (a == 4) {
         $b = $('<button>').attr('id', 'id').attr('type', 'button').attr('class', 'btn btn-outline-primary').text('Correct! You took ' + count + ' guesses.')
         $col = $('<div>').attr('class', 'col').append($b)
@@ -58,6 +67,11 @@ $('#guess').on('click', () => {
 
         $('#clear').attr('disabled', 'disabled')
         $('#delete').attr('disabled', 'disabled')
+        $("#lead").empty()
+        $("#lead").append('Congratulation!')
+        $("#start").show()
+        $("#start").empty()
+        $("#start").append('Play again?')
     }
 
     $('#guess').attr('disabled', 'disabled')
