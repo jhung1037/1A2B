@@ -6,3 +6,4 @@
 - 請不同玩家抓Bug。
 - Debug。
 - 新增「重新開始」功能
+- https://jhung1037.github.io/1A2B/index.html
