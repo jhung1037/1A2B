@@ -80,132 +80,28 @@ $('#guess').on('click', () => {
 })
 
 // Buttons (loops?)
-$('#1').on('click', () => {
-    $("#ans" + time).val(1)
-    guess.push(1)
-    $('#1').attr('disabled', 'disabled')
+function handleClick(id) {
+    $("#ans" + time).val(id)
+    guess.push(id)
+    $('#' + id).attr('disabled', 'disabled')
     time++
     if (time == 4) {
         $('#guess').removeAttr("disabled")
         for (var i = 0; i <= 3; i++) {
             $('#' + guess[i]).attr('disabled', 'disabled')
         }
-        for (var i = 0; i <= 9; i++)
+        for (var i = 0; i <= 9; i++) {
             $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#2').on('click', () => {
-    $("#ans" + time).val(2)
-    guess.push(2)
-    $('#2').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
         }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
     }
-})
-$('#3').on('click', () => {
-    $("#ans" + time).val(3)
-    guess.push(3)
-    $('#3').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#4').on('click', () => {
-    $("#ans" + time).val(4)
-    guess.push(4)
-    $('#4').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#5').on('click', () => {
-    $("#ans" + time).val(5)
-    guess.push(5)
-    $('#5').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#6').on('click', () => {
-    $("#ans" + time).val(6)
-    guess.push(6)
-    $('#6').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#7').on('click', () => {
-    $("#ans" + time).val(7)
-    guess.push(7)
-    $('#7').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#8').on('click', () => {
-    $("#ans" + time).val(8)
-    guess.push(8)
-    $('#8').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
-$('#9').on('click', () => {
-    $("#ans" + time).val(9)
-    guess.push(9)
-    $('#9').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
-})
+}
+for (var i = 0; i <= 9; i++) {
+    $('#'+i).on('click', function(index) {
+        return function() {
+            handleClick(index);
+        };
+    }(i));
+}
 $('#clear').on('click', () => {
     $('#guess').attr('disabled', 'disabled')
     for (var i = 0; i <= 9; i++) {
@@ -214,20 +110,6 @@ $('#clear').on('click', () => {
     }
     guess = []
     time = 0
-})
-$('#0').on('click', () => {
-    $("#ans" + time).val(0)
-    guess.push(0)
-    $('#0').attr('disabled', 'disabled')
-    time++
-    if (time == 4) {
-        $('#guess').removeAttr("disabled")
-        for (var i = 0; i <= 3; i++) {
-            $('#' + guess[i]).attr('disabled', 'disabled')
-        }
-        for (var i = 0; i <= 9; i++)
-            $('#' + i).attr('disabled', 'disabled')
-    }
 })
 $('#delete').on('click', () => {
     if (time == 4) {
